@@ -1,0 +1,34 @@
+Looking at the problem statment,Breaking the Record;
+Maria is playing BasketBall for her college and she wants to become pro. She maintains the score of each season which have 
+most points and least pounts each season.
+The Points scored in the first season sets the record and she starts counting from that.
+We have to print the number of maximum and minimum times she broke her record.
+Consider the array [3 4 21 36 10 28 35 5 24 42]
+season points minimum maximum   coumtmax  countmin 
+0       3       3        3        0         0
+1       4       3         4       1        0
+2       21      3         21      2         0
+3       36      3         36      3         0 
+4       10      3         36      3         0
+5       28      3          36     3         0
+6       35      3         36      3         0
+7       5       3         36      3         0
+8       24      3         36      3          0
+9       45      3         45      4         0
+
+so we have to print 4,0
+
+n = int(input())
+a = list(map(int,input().split(" ")))
+mx = 0
+mn = 0
+maxt = a[0]
+mint= a[0]
+for i in range(n):
+    if(a[i]>maxt):
+        mx +=1
+        maxt = a[i]
+    elif(a[i]<mint):
+        mn+=1
+        mint  =a[i]
+print(mx,mn)
